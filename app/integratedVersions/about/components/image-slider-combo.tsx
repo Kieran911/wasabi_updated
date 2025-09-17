@@ -1,18 +1,16 @@
-"use client";
+'use client';
 
-import React, { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Forum, Noto_Sans } from "next/font/google";
-// import { twMerge } from 'tailwind-merge';
-import Image from "next/image";
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import Image from 'next/image';
 
-import cheers from "@/public/about/Cheers.png";
-import firstImage from "@/public/about/turshu-govurma-plov-national-azerbaijani-food.png";
-import secondImage from "@/public/about/top-view-elegantly-arranged-plate.png";
-import thirdImage from "@/public/about/fried-meat-with-mix-cabbage-apple-onion-bbq-sauce-side-view.png";
-import fourthImage from "@/public/about/closeup-side-dish-with-vegetables-caviar-top-with-blurred-background.png";
-import fifthImage from "@/public/about/mash-topped-with-vegetables-pomegranate.png";
-import { forumFont, notoSansFont } from "@/app/utils/font";
+import cheers from '@/public/about/Cheers.png';
+import firstImage from '@/public/about/turshu-govurma-plov-national-azerbaijani-food.png';
+import secondImage from '@/public/about/top-view-elegantly-arranged-plate.png';
+import thirdImage from '@/public/about/fried-meat-with-mix-cabbage-apple-onion-bbq-sauce-side-view.png';
+import fourthImage from '@/public/about/closeup-side-dish-with-vegetables-caviar-top-with-blurred-background.png';
+import fifthImage from '@/public/about/mash-topped-with-vegetables-pomegranate.png';
+import { forumFont, notoSansFont, Optima_bold } from '@/app/utils/font';
 const sixthItem = () => {
   return (
     <div className="w-full h-full text-white flex items-center justify-center gap-8">
@@ -24,7 +22,7 @@ const sixthItem = () => {
           className="h-7 w-7 flex items-center justify-center mx-auto"
           initial={{ translateX: 80, opacity: 0.5 }}
           whileInView={{ translateX: 0, opacity: 1 }}
-          transition={{ type: "spring", bounce: 0 }}
+          transition={{ type: 'spring', bounce: 0 }}
         >
           <Image
             src={cheers}
@@ -37,7 +35,7 @@ const sixthItem = () => {
           initial={{ translateX: 80, opacity: 0.5 }}
           whileInView={{ translateX: 0, opacity: 1 }}
           transition={{
-            type: "spring",
+            type: 'spring',
             bounce: 0,
             delay: 0.1,
           }}
@@ -49,13 +47,13 @@ const sixthItem = () => {
           initial={{ translateX: 80, opacity: 0.5 }}
           whileInView={{ translateX: 0, opacity: 1 }}
           transition={{
-            type: "spring",
+            type: 'spring',
             bounce: 0,
 
             delay: 0.3,
           }}
-          className={`text-sm text-nowrap px-6 py-3 text-black rounded-3xl text-center w-[50%] mx-auto ${notoSansFont.className}`}
-          style={{ backgroundColor: "#C0A078" }}
+          className={`text-sm text-nowrap px-6 py-3 text-black rounded-3xl text-center w-[45%] mx-auto ${notoSansFont.className}`}
+          style={{ backgroundColor: '#C0A078' }}
         >
           SEE MENU
         </motion.button>
@@ -64,26 +62,17 @@ const sixthItem = () => {
   );
 };
 
-const mobileDisplay = [
-  firstImage,
-  secondImage,
-  thirdImage,
-  fourthImage,
-  fifthImage,
-  sixthItem,
-];
-
 const CARD_COUNT = 6;
 
 const STACK_MARGIN = 32;
 
 const cardColors = [
-  "#e57373",
-  "#64b5f6",
-  "#81c784",
-  "#ffd54f",
-  "#ba68c8",
-  "#333",
+  '#e57373',
+  '#64b5f6',
+  '#81c784',
+  '#ffd54f',
+  '#ba68c8',
+  '#333',
 ];
 
 export const ImagesSlider = () => {
@@ -91,7 +80,7 @@ export const ImagesSlider = () => {
   const [cardWidths, setCardWidths] = useState<number[]>([]);
   const [totalWidth, setTotalWidth] = useState(0);
   const [viewportWidth, setViewportWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1920
+    typeof window !== 'undefined' ? window.innerWidth : 1920
   );
 
   const staticHeader = (
@@ -129,13 +118,13 @@ export const ImagesSlider = () => {
       setViewportWidth(window.innerWidth);
     }
     recalcWidths();
-    window.addEventListener("resize", recalcWidths);
-    return () => window.removeEventListener("resize", recalcWidths);
+    window.addEventListener('resize', recalcWidths);
+    return () => window.removeEventListener('resize', recalcWidths);
   }, []);
 
   const { scrollYProgress } = useScroll({
     target: parentRef,
-    offset: ["start start", "end end"],
+    offset: ['start start', 'end end'],
   });
 
   // For each card, calculate its own translateX
@@ -186,24 +175,24 @@ export const ImagesSlider = () => {
       <motion.div
         key={i}
         style={{
-          position: "absolute",
-          top: "0",
+          position: 'absolute',
+          top: '0',
           left: cardLeft,
           width,
-          height: "100vh",
+          height: '100vh',
           background: cardColors[i],
-          color: i === CARD_COUNT - 1 ? "#fff" : "#222",
-          boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
+          color: i === CARD_COUNT - 1 ? '#fff' : '#222',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
           zIndex,
           marginLeft,
           marginRight,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           fontSize: 32,
           fontWeight: 600,
-          transition: "box-shadow 0.3s, background 0.3s",
-          overflow: "hidden",
+          transition: 'box-shadow 0.3s, background 0.3s',
+          overflow: 'hidden',
           x: springX,
         }}
       >
@@ -221,18 +210,18 @@ export const ImagesSlider = () => {
                   ? fourthImage.src
                   : i === 4
                   ? fifthImage.src
-                  : ""
+                  : ''
               }
               alt={`Card ${i + 1}`}
               width={1000}
               height={1000}
               style={{
-                position: "absolute",
+                position: 'absolute',
                 top: 0,
                 left: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
                 zIndex: 1,
               }}
             />
@@ -240,10 +229,10 @@ export const ImagesSlider = () => {
         ) : (
           <div
             style={{
-              textAlign: "center",
-              width: "100%",
+              textAlign: 'center',
+              width: '100%',
               zIndex: 2,
-              position: "relative",
+              position: 'relative',
             }}
           >
             {sixthItem()}
@@ -255,50 +244,115 @@ export const ImagesSlider = () => {
 
   return (
     <>
-      <div className="w-full overflow-x-hidden bg-white">{staticHeader}</div>
-      <div className="lg:hidden">
-        <div className="h-[600vh]">
-          {mobileDisplay?.map((item, idx) => (
-            <div
-              className={"sticky top-0 h-screen w-full overflow-hidden"}
-              key={idx}
-            >
-              {typeof item === "function" ? (
-                <div className="bg-black h-full w-full">{item()}</div>
-              ) : (
-                <div className="h-full w-full relative">
-                  <Image
-                    src={item}
-                    alt={`Slide ${idx + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-            </div>
-          ))}
+      <div className="w-full overflow-x-hidden hidden lg:block bg-white">
+        {staticHeader}
+      </div>
+      <div className="relative lg:hidden bg-black">
+        <div className="w-full overflow-x-hidden h-fit lg:hidden relative z-20 bg-black  text-white">
+          <h3
+            className={`text-4xl ${forumFont.className} text-center text-[#C0A078] my-12`}
+          >
+            {' '}
+            BROWSE OUR <br /> CURATED MENU
+          </h3>
+        </div>
+        <div className="relative h-[45vh] min-h-[20rem] flex">
+          <div
+            // variants={imageUpVariant}
+            className="absolute left-[-35%] w-[45%] rotate-[-30deg] top-[20vw] min-w-[13rem] aspect-[1/1.15] overflow-hidden"
+          >
+            <img
+              src={firstImage.src}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div
+            // variants={imageUpVariant}
+            className="absolute left-[4%] top-[5%] rotate-[-15deg] z-10 w-[45%] min-w-[13rem] aspect-[1/1.15] overflow-hidden"
+          >
+            <img
+              src={secondImage.src}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div
+            //center
+            className="absolute inset-x-0 mx-auto  z-20 w-[45%] min-w-[13rem] aspect-[1/1.15] overflow-hidden"
+          >
+            <img
+              src={thirdImage.src}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="absolute right-[4%] top-[5%] w-[45%]  rotate-[15deg] min-w-[13rem] aspect-[1/1.15] overflow-hidden">
+            <img
+              src={fourthImage.src}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div
+            // variants={imageUpVariant}
+            className="absolute right-[-35%] z-10 top-[20vw] w-[45%] rotate-[30deg] min-w-[13rem] aspect-[1/1.15] overflow-hidden"
+          >
+            <img
+              src={fifthImage.src}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div className="relative -top-[11vh] sm:-top-[2vh] -mb-6 min-h-[25rem] flex flex-col justify-evenly pt-2">
+          <div className="size-[4.5rem] flex items-center justify-center mx-auto">
+            <Image
+              src={cheers}
+              alt="cheers"
+              className="h-full w-full object-cover text-[#FEFAF4]"
+            />
+          </div>
+          <div
+            className={`text-lg text-center uppercase font-extralight text-[#FEFAF4] ${forumFont.className}`}
+          >
+            <p>Discover dishes designed to </p>
+            <p>delight the senses—crafted</p> <p>with precision, inspired by</p>{' '}
+            <p>tradition, and served with intention.</p>
+          </div>
+          <button
+            className={`font-medium text-nowrap px-5 py-3 text-black rounded-4xl text-center min-w-[10rem] mx-auto ${Optima_bold.className}`}
+            style={{ backgroundColor: '#C0A078' }}
+          >
+            SEE MENU
+          </button>
         </div>
       </div>
-
       <motion.div
-        className="hidden md:block"
+        className="hidden lg:block"
         ref={parentRef}
-        style={{ height: "300vh", position: "relative" }}
+        style={{ height: '300vh', position: 'relative' }}
         initial={{ translateY: -8, scale: 0.95 }}
         whileInView={{ translateY: 0, scale: 1 }}
         transition={{ stiffness: 70 }}
       >
         <div
           style={{
-            position: "sticky",
+            position: 'sticky',
             top: 0,
             left: 0,
-            width: "100%",
-            height: "100vh",
-            overflow: "hidden",
+            width: '100%',
+            height: '100vh',
+            overflow: 'hidden',
           }}
         >
           <div
-            style={{ position: "relative", width: totalWidth, height: "100vh" }}
+            style={{ position: 'relative', width: totalWidth, height: '100vh' }}
           >
             {cards}
           </div>

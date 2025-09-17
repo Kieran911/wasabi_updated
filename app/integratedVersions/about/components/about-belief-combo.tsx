@@ -56,7 +56,7 @@ export const AboutAndBelief = ({ setCanShow }: any) => {
   ];
 
   return (
-    <div ref={beliefRef} className="h-[350vh] w-full relative">
+    <div ref={beliefRef} className="h-[350vh] w-full relative hidden lg:block">
       {/* First sticky section */}
       <div className="h-[100vh] w-full sticky top-0 overflow-hidden z-10">
         <motion.div className="relative inset-0 z-20 h-full">
@@ -121,14 +121,14 @@ export const AboutAndBelief = ({ setCanShow }: any) => {
       {/* Belief Section */}
       <div
         ref={beliefRef}
-        className=" w-full absolute left-0 bottom-0  pt-[7rem] z-20 flex items-center justify-center bg-black"
+        className="w-full absolute lg:left-0 lg:bottom-0  lg:pt-[7rem] z-20 flex items-center justify-center bg-black"
       >
         <motion.div
-          className="w-[150rem] max-w-full relative   mx-auto flex flex-col items-center text-center "
+          className="lg:w-[150rem] max-w-full relative  mx-auto flex flex-col items-center text-center "
           layout
           transition={{ delayChildren: 0.3 }}
         >
-          <div className="h-[95%] w-full absolute top-0 left-0  bg-gradient-to-b  from-black via-black"></div>
+          <div className="h-[100vh] lg:h-[95%] w-full absolute top-0 left-0  bg-gradient-to-b  from-black via-black" />
           <div className="mb-4 z-[10] flex flex-col items-center">
             <span className="h-24 w-24">
               <Image
@@ -195,7 +195,10 @@ export const AboutAndBelief = ({ setCanShow }: any) => {
             Of Indulgence, Artistry, And Unforgettable Taste.
           </motion.p>
 
-          <div className="w-full ">
+          <div className="w-full hidden lg:block">
+            <Image src={aboutmenu} alt="foodimg" className="w-full h-fit" />
+          </div>
+          <div className="w-full lg:hidden">
             <Image src={aboutmenu} alt="foodimg" className="w-full h-fit" />
           </div>
         </motion.div>

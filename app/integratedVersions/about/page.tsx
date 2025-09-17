@@ -7,6 +7,7 @@ import { DinnerTable } from './components/dinnerTable-combo';
 import { FeastInStyle } from './components/feast-in-style-combo';
 import { ImagesSlider } from './components/image-slider-combo';
 import { Timeline } from './components/timeline-combo';
+import { AboutAndBeliefMobile } from './components/about-belief-mobile-only';
 
 const Page = () => {
   const [canShow, setCanShow] = useState(false);
@@ -15,6 +16,7 @@ const Page = () => {
     <div className="w-full overflow-x-hidden lg:overflow-x-visible">
       <GeneralHeader canShow={canShow} />
       <AboutAndBelief setCanShow={setCanShow} />
+      <AboutAndBeliefMobile setCanShow={setCanShow} />
       {/* <DinnerTable /> */}
       <Timeline />
 
