@@ -197,12 +197,7 @@ export default function ReserveForm() {
 
   const container = {
     hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.11,
-        delayChildren: 0.13,
-      },
-    },
+    show: { transition: { staggerChildren: 0.11, delayChildren: 0.13 } },
   };
 
   const item = {
@@ -215,52 +210,50 @@ export default function ReserveForm() {
       initial="hidden"
       animate="show"
       variants={container}
-      className="w-full  mt-[7rem]  flex items-center justify-center"
+      className="w-full mt-[7rem] flex items-center justify-center px-4"
     >
-      <motion.div className="max-w-[90%]  w-[150rem] flex items-stretch ">
+      {/* stack on mobile; two columns on md+ */}
+      <motion.div className="w-full max-w-[940px] md:max-w-[90%] md:w-[150rem] flex flex-col md:flex-row items-stretch gap-6">
         {/* Left column */}
         <motion.div
           variants={item}
-          className="w-full items-center  flex flex-col justify-center pl-4"
+          className="w-full items-center md:items-start flex flex-col justify-center md:pl-4 text-center md:text-left"
         >
           <motion.h1
             variants={item}
-            className={`lg:text-[60px] md:text-[50px] tracking-[1rem]  text-[#3E2E1C] font-light  leading-[1.12] mb-6 ${forumFont.className}`}
+            className={`text-[25px] sm:text-[34px] md:text-[50px] lg:text-[60px] tracking-[0.35em] md:tracking-[1rem] text-[#3E2E1C] font-light leading-[1.15] mb-4 md:mb-6 ${forumFont.className}`}
           >
-            HAVE AN
-            <br />
-            EVENT ?<br />
-            RESERVE A<br />
-            SPOT
+            HAVE AN EVENT ? <br />
+            RESERVE A SPOT
           </motion.h1>
           <motion.p
             variants={item}
-            className={`${notoSansFont.className} text-lg md:text-[1.1rem] font-normal mb-1`}
+            className={`${notoSansFont.className} text-[0.81rem] sm:text-base md:text-[1.1rem] font-normal text-center md:text-left`}
           >
             Join Us Monday Through Sunday | 12 PM – 11 PM
             <br />
             Fine Dining, Anytime You Desire.
           </motion.p>
         </motion.div>
-        {/* Right column (form) */}
+
+        {/* Form card */}
         <motion.form
           variants={item}
-          className={`w-full font-light  mx-5  bg-[#F4EFE1] rounded-3xl px-10 py-8 flex flex-col gap-3 shadow-sm ${notoSansFont.className}`}
+          className={`w-full font-light mx-0 md:mx-5 bg-[#F4EFE1] rounded-[24px] md:rounded-3xl px-4 sm:px-6 md:px-10 py-6 lg:py-8 flex flex-col gap-3 shadow-sm ${notoSansFont.className}`}
           onSubmit={(e) => {
             e.preventDefault();
-            // TODO: handle submit logic
           }}
         >
           <motion.div
             variants={item}
-            className={` ${forumFont.className} text-[1.22rem] text-center mb-4 tracking-[0.4rem] font-[350] text-[#31291B]`}
+            className={` ${forumFont.className} text-[1.05rem] sm:text-[1.22rem] text-center mb-4 tracking-[0.35rem] lg:tracking-[0.4rem] font-[350] text-[#31291B]`}
           >
             FILL OUT THE FORM
           </motion.div>
           <div className="border-b mb-3 border-[#C0A079]/50" />
 
-          {/* Input fields */}
-          {fields.map(({ name, placeholder, type }, i) => (
+          {/* Inputs */}
+          {fields.map(({ name, placeholder, type }) => (
             <motion.input
               key={name}
               variants={item}
@@ -270,41 +263,42 @@ export default function ReserveForm() {
               placeholder={placeholder}
               autoComplete="on"
               onChange={handleChange}
-              className="w-full rounded-xl bg-[#E9DECA] placeholder-[#554636] text-[#3E2E1C] px-4 py-4 text-sm  tracking-widest outline-none focus:ring-2 focus:ring-[#D5C5A6] border-none mb-1"
+              className="w-full rounded-2xl lg:rounded-xl bg-[#E9DECA] placeholder-[#554636] text-[#3E2E1C] px-5 sm:px-6 py-4 text-sm tracking-widest outline-none focus:ring-2 focus:ring-[#D5C5A6] border-none mb-1"
             />
           ))}
+
           {/* People Count */}
           <motion.div
             variants={item}
-            className="w-full flex items-center justify-between bg-[#E9DECA] rounded-2xl px-6 py-4 font-medium text-lg tracking-[0.25em] mb-1"
+            className="w-full flex items-center justify-between bg-[#E9DECA] rounded-2xl px-5 sm:px-6 py-4 font-medium text-lg tracking-[0.25em] mb-1"
           >
-            <span className="uppercase text-[#3E2E1C] text-sm tracking-[0.22em] font-light">
+            <span className="uppercase text-[#3E2E1C] text-xs sm:text-sm tracking-[0.22em] font-light">
               HOW MANY PEOPLE ARE YOU EXPECTING
             </span>
             <div className="flex items-center gap-3 ml-4">
               <button
                 type="button"
                 aria-label="Add one"
-                className=" w-[2rem] h-[2rem] flex items-center justify-center rounded-xl bg-[#F9F4E9] text-xl text-[#3E2E1C] cursor-pointer font-semibold shadow-sm hover:bg-white/40 transition"
+                className="w-8 h-8 flex items-center justify-center rounded-xl bg-[#F9F4E9] text-xl text-[#3E2E1C] cursor-pointer font-semibold shadow-sm hover:bg-white/40 transition"
                 onClick={() => setPeople((p) => Math.min(p + 1, 99))}
               >
-                <i className="bi bi-plus  w-[20px]"></i>
+                <i className="bi bi-plus w-[20px]" />
               </button>
-              <span className=" w-[12px]  text-center text-lg font-semibold text-[#3E2E1C]">
+              <span className="min-w-[1rem] text-center text-lg font-semibold text-[#3E2E1C]">
                 {people}
               </span>
               <button
                 type="button"
                 aria-label="Remove one"
-                className=" w-[2rem] h-[2rem] flex items-center justify-center rounded-xl bg-[#F9F4E9] text-xl text-[#3E2E1C] cursor-pointer font-semibold shadow-sm hover:bg-white/40 transition"
+                className="w-8 h-8 flex items-center justify-center rounded-xl bg-[#F9F4E9] text-xl text-[#3E2E1C] cursor-pointer font-semibold shadow-sm hover:bg-white/40 transition"
                 onClick={() => setPeople((p) => Math.max(1, p - 1))}
               >
-                <i className="bi bi-dash  w-[20px]"></i>
+                <i className="bi bi-dash w-[20px]" />
               </button>
             </div>
           </motion.div>
 
-          {/* Date Picker */}
+          {/* Date & Time */}
           <PickerBox
             value={date}
             onChange={setDate}
@@ -313,7 +307,6 @@ export default function ReserveForm() {
             icon="calendar"
             variants={item}
           />
-          {/* Time Picker */}
           <PickerBox
             value={time}
             onChange={setTime}
@@ -322,20 +315,21 @@ export default function ReserveForm() {
             icon="clock"
             variants={item}
           />
-          {/* Extra Details */}
+
+          {/* Extra */}
           <motion.textarea
             variants={item}
             value={extra}
             onChange={(e) => setExtra(e.target.value)}
-            rows={2}
+            rows={3}
             placeholder="ENTER EXTRA DETAILS"
-            className="w-full rounded-xl bg-[#ECE3D2] placeholder-[#554636] text-[#49382A] px-6 py-4 font-light text-sm tracking-widest outline-none focus:ring-2 focus:ring-[#D5C5A6] border-none mb-1 resize-none"
+            className="w-full rounded-2xl lg:rounded-xl bg-[#ECE3D2] placeholder-[#554636] text-[#49382A] px-6 py-4 font-light text-sm tracking-widest outline-none focus:ring-2 focus:ring-[#D5C5A6] border-none mb-1 resize-none"
           />
 
           <motion.button
             variants={item}
             type="submit"
-            className={`mt-3 w-fit mx-auto px-[2rem] py-[0.8rem] bg-[#C0A078] text-[#020604]  font-semibold rounded-full tracking-widest hover:bg-[#997b53] transition-colors ${notoSansFont.className}`}
+            className={`mt-3 w-[68%] lg:w-fit mx-auto px-[2rem] py-[0.85rem] bg-[#C0A078] text-[#020604] font-semibold rounded-full tracking-widest hover:bg-[#997b53] transition-colors ${notoSansFont.className}`}
           >
             BOOK NOW
           </motion.button>

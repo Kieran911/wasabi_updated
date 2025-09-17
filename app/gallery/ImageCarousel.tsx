@@ -1,49 +1,60 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import gallery1 from "@/public/gallery/gallery1.webp";
-import gallery2 from "@/public/gallery/gallery2.webp";
-import gallery3 from "@/public/gallery/gallery3.webp";
-import gallery4 from "@/public/gallery/gallery4.webp";
-import gallery5 from "@/public/gallery/gallery5.webp";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import gallery1 from '@/public/gallery/gallery1.webp';
+import gallery2 from '@/public/gallery/gallery2.webp';
+import gallery3 from '@/public/gallery/gallery3.webp';
+import gallery4 from '@/public/gallery/gallery4.webp';
+import gallery5 from '@/public/gallery/gallery5.webp';
 import {
   useScroll,
   useTransform,
   motion,
   useMotionValueEvent,
   AnimatePresence,
-} from "framer-motion";
-import Image from "next/image";
-import { notoSansFont } from "../utils/font";
+} from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import { notoSansFont } from '../utils/font';
+import VideoGallery, { galleryImagesMobile } from './mobileVideoCarousel';
+
+type VideoItem = {
+  id?: string | number;
+  title: string;
+  author: string; // e.g. "kelvin adams"
+  thumbnail: StaticImageData | string;
+  href?: string; // optional link to video
+  onClick?: () => void; // optional handler instead of href
+};
 
 const ImageCarousel = ({ show }: any) => {
   // Step 1: Build your array
   const galleryImages = [
     {
       src: gallery1,
-      text: "STACYS WEDDING PROPOSAL",
-      author: "by kelvin adams",
+      text: 'STACYS WEDDING PROPOSAL',
+      author: 'by kelvin adams',
     },
     {
       src: gallery2,
-      text: "DINNER DATE",
-      author: "by kelvin adams",
+      text: 'DINNER DATE',
+      author: 'by kelvin adams',
     },
     {
       src: gallery3,
-      text: "BUSINESS MEET UP",
-      author: "by kelvin adams",
+      text: 'BUSINESS MEET UP',
+      author: 'by kelvin adams',
     },
     {
       src: gallery4,
-      text: "ROMANTIC EVENING",
-      author: "by kelvin adams",
+      text: 'ROMANTIC EVENING',
+      author: 'by kelvin adams',
     },
     {
       src: gallery5,
-      text: "FAMILY CELEBRATION",
-      author: "by kelvin adams",
+      text: 'FAMILY CELEBRATION',
+      author: 'by kelvin adams',
     },
   ];
+
   const [firstImageFullyScaled, setFirstImageFullyScaled] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,18 +68,18 @@ const ImageCarousel = ({ show }: any) => {
   // Attach scroll progress to the container section
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["0.2 1", "0.96 1"], // Start at 20%, end at 100% scroll
+    offset: ['0.2 1', '0.96 1'], // Start at 20%, end at 100% scroll
   });
 
   // Animate X translation and scale based on scroll position
-  const x = useTransform(scrollYProgress, [0.27, 1], ["50%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0.27, 1], ['50%', '-80%']);
   const scale = useTransform(scrollYProgress, [0, 0.26], [0.85, 1]);
 
   // Keep a ref for last index so we only update state when it changes
   const lastIndexRef = useRef(activeIndex);
 
   // As scrollYProgress changes, update activeIndex
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     let newIndex = Math.round(latest / imageZone - 1.35);
     if (newIndex < 0) newIndex = 0;
     if (newIndex >= galleryImages.length) newIndex = galleryImages.length - 1;
@@ -91,7 +102,7 @@ const ImageCarousel = ({ show }: any) => {
 
     window.scrollTo({
       top: targetY,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
   useEffect(() => {
@@ -100,7 +111,7 @@ const ImageCarousel = ({ show }: any) => {
       setFirstImageFullyScaled(false);
       return;
     }
-    const unsubscribe = scale.on("change", (latest) => {
+    const unsubscribe = scale.on('change', (latest) => {
       if (latest >= 0.995) {
         setFirstImageFullyScaled(true);
       } else {
@@ -113,7 +124,7 @@ const ImageCarousel = ({ show }: any) => {
     <>
       <div
         ref={containerRef}
-        className="relative w-full"
+        className="relative hidden lg:block w-full"
         style={{ height: `${galleryImages.length * 60}vh` }}
       >
         {!show && <div className="h-[20vh]"></div>}
@@ -125,9 +136,9 @@ const ImageCarousel = ({ show }: any) => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -40 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
                 className="absolute left-[6vw] top-1/3 z-10 max-w-[75vw] flex flex-row items-start gap-2"
-                style={{ pointerEvents: "none" }}
+                style={{ pointerEvents: 'none' }}
               >
                 <span
                   className={` ${notoSansFont.className}  text-4xl md:text-6xl text-white  tracking-tight`}
@@ -137,8 +148,8 @@ const ImageCarousel = ({ show }: any) => {
                 <span
                   className={`text-base md:text-xl text-white font-light ml-4 self-center translate-y-[-0.7em] capitalize ${notoSansFont.className}`}
                   style={{
-                    letterSpacing: "0.01em",
-                    whiteSpace: "nowrap",
+                    letterSpacing: '0.01em',
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   {galleryImages[activeIndex].author}
@@ -153,7 +164,7 @@ const ImageCarousel = ({ show }: any) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
               style={{
                 scale,
               }}
@@ -163,7 +174,7 @@ const ImageCarousel = ({ show }: any) => {
                 src={galleryImages[activeIndex].src}
                 alt="Gallery Background"
                 className="object-cover h-full w-full"
-                style={{ filter: "brightness(0.6)" }}
+                style={{ filter: 'brightness(0.6)' }}
                 priority
                 sizes="100vw"
                 fill
@@ -179,7 +190,7 @@ const ImageCarousel = ({ show }: any) => {
               exit={{ opacity: 0, y: 60 }}
               transition={{
                 duration: 0.5,
-                ease: "easeOut",
+                ease: 'easeOut',
                 delay: 0.3, // Stagger the reveal (optional)
               }}
               style={{ x }}
@@ -189,9 +200,9 @@ const ImageCarousel = ({ show }: any) => {
                 <button
                   key={index}
                   onClick={() => handleThumbnailClick(index)}
-                  style={{ transition: "0.3s ease-in-out" }}
+                  style={{ transition: '0.3s ease-in-out' }}
                   className={`flex flex-col bg-white rounded-[15px] overflow-hidden items-center justify-center aspect-[1/0.5] cursor-pointer h-fit shrink-0 w-[25%]
-          ${index === activeIndex ? "ring-4 ring-[white]" : ""}`}
+          ${index === activeIndex ? 'ring-4 ring-[white]' : ''}`}
                 >
                   <Image
                     src={image.src}
@@ -204,6 +215,7 @@ const ImageCarousel = ({ show }: any) => {
           </AnimatePresence>
         </div>
       </div>
+      <VideoGallery items={galleryImagesMobile} className="lg:hidden" />
     </>
   );
 };

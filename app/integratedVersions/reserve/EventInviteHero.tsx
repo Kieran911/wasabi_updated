@@ -37,7 +37,7 @@ export default function EventInviteSection() {
           y: headlineY,
           opacity: headlineOpacity,
         }}
-        className={`text-center text-[#201C17] tracking-[.14em] leading-tight 
+        className={`text-center px-4 text-[#201C17] tracking-[.14em] leading-tight 
         font-light text-3xl md:text-5xl lg:text-6xl ${forumFont.className}`}
       >
         HOST WITH DISTINCTION.
@@ -67,13 +67,16 @@ export default function EventInviteSection() {
           y: descY,
           opacity: descOpacity,
         }}
-        className={`w-[55rem] max-w-[90%] mx-auto text-center text-[black]/60 text-[1.12rem] font-medium tracking-wide ${notoSansFont.className}`}
+        className={`w-[55rem] max-w-[90%] mx-auto text-center text-[black]/60 text-sm md:text-[1.12rem] font-medium tracking-wide ${notoSansFont.className}`}
       >
-        Booking Your Event At Wasabi Means Stepping Into A World Where Every
-        Detail Is Refined, Every Flavor Is Intentional, And Every Guest Leaves
-        Impressed. Whether You're Planning An Intimate Celebration, A
-        High-Profile Launch, Or A Private Corporate Dinner, Wasabi Offers More
-        Than Just A Venue — It Delivers A Full Sensory Experience.
+        Booking Your Event At Wasabi Means <br className="sm:hidden" /> Stepping
+        Into A World Where Every Detail Is <br className="sm:hidden" /> Refined,
+        Every Flavor Is Intentional, And <br className="sm:hidden" /> Every
+        Guest Leaves Impressed. Whether <br className="sm:hidden" /> You're
+        Planning An Intimate Celebration, A <br className="sm:hidden" />
+        High-Profile Launch, Or A Private Corporate <br className="sm:hidden" />
+        Dinner, Wasabi Offers More Than Just A <br className="sm:hidden" />
+        Venue — It Delivers A Full Sensory Experience.
       </motion.p>
     </section>
   );

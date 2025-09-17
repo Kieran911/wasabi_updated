@@ -10,14 +10,14 @@ const Page = () => {
   const [canShow, setCanShow] = useState(false);
 
   return (
-    <>
+    <div className="overflow-hidden">
       <GeneralHeader canShow={canShow} />
       <ReserveForm />
       <EventInviteSection />
       <ImageCarousel show={true} />
 
       <Footer />
-    </>
+    </div>
   );
 };
 
