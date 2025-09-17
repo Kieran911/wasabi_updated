@@ -2,11 +2,10 @@
 import { useState } from 'react';
 import GeneralHeader from '@/app/Components/GeneralHeader';
 import Footer from '@/app/Home/components/Footer';
-import { AboutAndBelief } from './components/about-belief-combo';
-import { DinnerTable } from './components/dinnerTable-combo';
-import { FeastInStyle } from './components/feast-in-style-combo';
-import { ImagesSlider } from './components/image-slider-combo';
-import { Timeline } from './components/timeline-combo';
+import { AboutAndBelief } from './components/about-belief';
+import { FeastInStyle } from './components/feast-in-style';
+import { ImagesSlider } from './components/image-slider';
+import { Timeline } from './components/timeline';
 import { AboutAndBeliefMobile } from './components/about-belief-mobile-only';
 
 const Page = () => {
@@ -17,7 +16,6 @@ const Page = () => {
       <GeneralHeader canShow={canShow} />
       <AboutAndBelief setCanShow={setCanShow} />
       <AboutAndBeliefMobile setCanShow={setCanShow} />
-      {/* <DinnerTable /> */}
       <Timeline />
 
       <ImagesSlider />
