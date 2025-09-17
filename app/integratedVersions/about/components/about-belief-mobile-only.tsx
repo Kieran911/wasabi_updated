@@ -86,7 +86,7 @@ export function AboutAndBeliefMobile({
 
         {/* Headings */}
         <div
-          className={`pointer-events-none absolute inset-0 z-10 flex flex-col justify-center px-4 ${forumFont.className}`}
+          className={`pointer-events-none absolute inset-0 space-y-6 z-10 flex flex-col justify-center px-4 ${forumFont.className}`}
         >
           <motion.span
             style={{ x: aboutX }}
