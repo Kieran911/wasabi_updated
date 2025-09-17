@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
 
         {/* bottom row */}
-        <div className="mt-10 px-4 flex items-center justify-between text-[#C0A079] text-xs">
+        <div className="mt-10 px-1.5 flex items-center justify-between text-[#C0A079] text-xs">
           <span>© {currentYear} swiftly. All rights reserved.</span>
           <a
             href="https://www.malkain.com/"
