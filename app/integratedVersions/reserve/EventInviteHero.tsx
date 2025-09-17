@@ -37,7 +37,7 @@ export default function EventInviteSection() {
           y: headlineY,
           opacity: headlineOpacity,
         }}
-        className={`text-center px-4 text-[#201C17] tracking-[.14em] leading-tight 
+        className={`text-center -mt-10 md:-mt-0 px-4 text-[#201C17] tracking-[.14em] leading-tight 
         font-light text-3xl md:text-5xl lg:text-6xl ${forumFont.className}`}
       >
         HOST WITH DISTINCTION.

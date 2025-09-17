@@ -97,7 +97,7 @@ function VideoCard({ item }: { item: VideoItem }) {
               width={200}
               height={200}
               alt="play icon"
-              className="size-8 text-[#7A664A]"
+              className="size-8"
             />
           </span>
         </button>
