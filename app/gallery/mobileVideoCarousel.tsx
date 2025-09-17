@@ -104,7 +104,7 @@ function VideoCard({ item }: { item: VideoItem }) {
       </div>
 
       {/* text */}
-      <div className="pt-2.5 px-1.5 sm:pt-3 font-medium">
+      <div className="pt-3 px-1.5 font-medium">
         <h3
           className={`text-xs font-medium leading-snug uppercase tracking-[0.12em] text-[#2B2218] ${notoSansFont.className}`}
         >
