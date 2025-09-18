@@ -131,15 +131,17 @@ export function AboutAndBeliefMobile({
             </div>
 
             <p
-              className={`z-[10] mx-auto -mt-[5%] mb-6 max-w-[22rem] text-lg leading-10 tracking-[0.08em] text-[#FEFAF4] capitalize ${forumFont.className}`}
+              className={`z-[10] space-x-2 mx-auto -mt-[5%] mb-6 max-w-[22rem] text-lg tracking-[0.08em] text-[#FEFAF4] capitalize ${forumFont.className}`}
             >
-              <span>Because</span>{' '}
-              <span className="italic">Bold Deserves Beauty</span>.{' '}
-              <span>At Wasabi, Every Detail Is A </span>
+              Because{' '}
+              <span className="italic space-x-2">
+                Bold Deserves <br /> Beauty
+              </span>
+              At Wasabi, Every <br /> Detail Is A{' '}
               <span className="italic font-semibold">
-                Statement—Of Taste, Elegance, And Fire.
-              </span>{' '}
-              <span>We Exist To Turn </span>
+                Statement—Of <br /> Taste, Elegance, And <br /> Fire.
+              </span>
+              We Exist To Turn <br />
               <span className="italic">Dining Into Art.</span>
             </p>
 
