@@ -131,16 +131,16 @@ export function AboutAndBeliefMobile({
             </div>
 
             <p
-              className={`z-[10] space-x-2 mx-auto -mt-[5%] mb-6 max-w-[22rem] text-lg tracking-[0.08em] text-[#FEFAF4] capitalize ${forumFont.className}`}
+              className={`z-[10] mx-auto -mt-[5%] mb-6 max-w-[22rem] text-lg tracking-[0.3em] text-[#FEFAF4] capitalize ${forumFont.className}`}
             >
               Because{' '}
-              <span className="italic space-x-2">
-                Bold Deserves <br /> Beauty
+              <span className="italic">
+                Bold Deserves <br /> Beauty{' '}
               </span>
               At Wasabi, Every <br /> Detail Is A{' '}
               <span className="italic font-semibold">
                 Statement—Of <br /> Taste, Elegance, And <br /> Fire.
-              </span>
+              </span>{' '}
               We Exist To Turn <br />
               <span className="italic">Dining Into Art.</span>
             </p>
@@ -152,14 +152,14 @@ export function AboutAndBeliefMobile({
                   key={i}
                   className={`flex items-center gap-2 text-xs tracking-[0.18rem] ${Optima_medium.className}`}
                 >
-                  <Image src={s.icon} alt={s.alt} className="h-5 w-5" />
+                  <Image src={s.icon} alt={s.alt} className="size-5" />
                   <span className="mt-0.5">{s.label}</span>
                 </div>
               ))}
             </div>
 
             <p
-              className={`z-[10] max-w-[22rem] tracking-[0.08em] leading-7 text-[#FEFAF4] ${notoSansFont.className}`}
+              className={`z-[10] max-w-[22rem] font-light tracking-[0.12em] leading-7 text-[#FEFAF4] ${notoSansFont.className}`}
             >
               <span className="block">
                 We&apos;re Not Just Serving Meals—We&apos;re

@@ -311,7 +311,7 @@ export const ImagesSlider = () => {
           </div>
         </div>
         <div className="relative -top-[11vh] sm:-top-[2vh] -mb-6 min-h-[25rem] flex flex-col justify-evenly pt-2">
-          <div className="size-[4.5rem] flex items-center justify-center mx-auto">
+          <div className="size-[4.8rem] flex items-center justify-center mx-auto">
             <Image
               src={cheers}
               alt="cheers"
@@ -319,11 +319,13 @@ export const ImagesSlider = () => {
             />
           </div>
           <div
-            className={`text-lg text-center uppercase font-extralight text-[#FEFAF4] ${forumFont.className}`}
+            className={`text-lg text-center tracking-widest uppercase font-light text-[#FEFAF4] ${forumFont.className}`}
           >
-            <p>Discover dishes designed to </p>
-            <p>delight the senses—crafted</p> <p>with precision, inspired by</p>{' '}
-            <p>tradition, and served with intention.</p>
+            Discover dishes designed to <br />
+            delight the senses—crafted
+            <br /> with precision, inspired by
+            <br />
+            tradition, and served with <br /> intention.
           </div>
           <button
             className={`font-medium text-nowrap px-5 py-3 text-black rounded-4xl text-center min-w-[10rem] mx-auto ${Optima_bold.className}`}
