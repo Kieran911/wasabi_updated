@@ -1,6 +1,6 @@
-import GeneralHeader from "../Components/GeneralHeader";
-import Footer from "../Home/components/Footer";
-import ImageCarousel from "./ImageCarousel";
+import GeneralHeader from '../Components/GeneralHeader';
+import Footer from '../Home/components/Footer';
+import ImageCarousel from './ImageCarousel';
 
 const Page = () => {
   return (

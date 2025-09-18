@@ -13,7 +13,7 @@ import {
   AnimatePresence,
 } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
-import { notoSansFont } from '../utils/font';
+import { notoSansFont } from '@/app/utils/font';
 import VideoGallery, { galleryImagesMobile } from './mobileVideoCarousel';
 
 type VideoItem = {
