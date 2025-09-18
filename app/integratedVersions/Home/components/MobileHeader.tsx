@@ -24,8 +24,8 @@ export default function MobileHeader({
 
   return (
     <div
-      className={`relative max-w-[97.5vw] mx-auto md:hidden mt-[9rem] rounded-[1.9rem] mb-[1rem] overflow-hidden bg-[#2B2218] shadow-[0_10px_30px_rgba(0,0,0,0.25)] ${className}`}
-      style={{ aspectRatio: '9/16' }} // keeps the tall card proportion
+      className={`relative max-w-[97.5vw] mx-auto md:hidden mt-[5rem] rounded-[1.9rem] mb-[1rem] overflow-hidden bg-[#2B2218] shadow-[0_10px_30px_rgba(0,0,0,0.25)] ${className}`}
+      style={{ aspectRatio: '9/18' }} // keeps the tall card proportion
       aria-label="Redefined Indulgence"
     >
       {/* background image */}
@@ -41,7 +41,7 @@ export default function MobileHeader({
       </div>
 
       {/* content */}
-      <div className="absolute inset-x-0 bottom-9 flex flex-col items-center pb-6 sm:pb-8 gap-6">
+      <div className="absolute inset-x-0 bottom-12 flex flex-col items-center pb-6 sm:pb-8 gap-6">
         {/* heading */}
         <div className="px-6 text-center">
           <h2
@@ -61,7 +61,7 @@ export default function MobileHeader({
         {/* CTA */}
         <Link
           href={ctaHref}
-          className={`${notoSansFont.className} inline-flex items-center justify-center rounded-full px-8 py-3 sm:px-9 sm:py-3.5 bg-[#C0A078] text-[#1B140D] font-semibold tracking-[0.22em] shadow-[0_6px_18px_rgba(0,0,0,0.25)] hover:brightness-95 transition`}
+          className={`${notoSansFont.className} inline-flex items-center justify-center rounded-full px-8 py-4 sm:px-9 sm:py-3.5 bg-[#C0A078] text-[#1B140D] font-semibold tracking-[0.22em] shadow-[0_6px_18px_rgba(0,0,0,0.25)] hover:brightness-95 transition`}
         >
           {ctaLabel}
         </Link>

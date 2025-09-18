@@ -15,6 +15,25 @@ body {
   border: 1px solid green;
 }
 
+@keyframes infiniteScrollX {
+  to {
+    left: -200px;
+  }
+}
+
+.scrollX {
+  left: max(calc(12rem * 6), 100%);
+  animation-name: infiniteScrollX;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scrollX-container:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
 @keyframes vertical-infinite-scroll {
   0% {
     transform: translateY(0%);

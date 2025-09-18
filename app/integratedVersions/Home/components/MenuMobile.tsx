@@ -21,8 +21,8 @@ export function MenuMobile() {
   ];
 
   return (
-    <section className="md:hidden w-full bg-black text-[#E9DFCF] -mt-1 aspect-[9/16]">
-      <div className="px-5 pt-10">
+    <section className="md:hidden w-full bg-black text-[#E9DFCF] -mt-1 -mb-12 aspect-[9/16]">
+      <div className="px-5 pt-12">
         <h1
           className={`${forumFont.className} text-center uppercase tracking-[0.22em] leading-tight`}
           style={{ fontSize: 'clamp(8.6vw, 8.5vw, 3rem)' }}
@@ -30,24 +30,23 @@ export function MenuMobile() {
           <span className="text-nowrap block">BROWSE OUR</span>
           <span className="text-nowrap block">CURATED MENU</span>
         </h1>
-        <div className="mt-4 h-px w-full bg-[#E9DFCF]/30" />
       </div>
+      <div className="mt-1 h-[0.6px] w-full bg-[#E9DFCF]/20" />
 
       {/* ---- Marquee (seamless, single row) ---- */}
-      <div className="px-5 mt-5">
+      <div className="mt-5">
         <div className="relative w-full overflow-hidden">
-          {/* Double track: two identical rows side-by-side.
-              We translate the whole track by -50% so the second half
-              perfectly replaces the first, then the animation resets with no jump. */}
-          <div className="flex w-[200%] gap-x-[50%] animate-[menuMarquee_22s_linear_infinite] will-change-transform">
-            {/* Row A */}
-            <div className="flex items-center gap-4 w-1/2">
+          <div className="mx-auto will-change-transform">
+            <div className="flex items-center gap-4 w-full relative overflow-hidden min-h-[18rem] scrollX-container">
               {tiles.map((t, i) => (
                 <div
                   key={`A-${i}`}
-                  className="flex flex-col items-center shrink-0"
+                  className="flex flex-col items-center shrink-0 w-[12rem] aspect-square absolute scrollX"
+                  style={{
+                    animationDelay: `${(30 / 6) * (6 - i) * -1}s`,
+                  }}
                 >
-                  <div className="relative min-w-[38vw] max-w-[140px] w-[38vw] aspect-[4/3] overflow-hidden rounded">
+                  <div className="w-full ">
                     <Image
                       src={t.src}
                       alt={t.name}
@@ -56,31 +55,7 @@ export function MenuMobile() {
                     />
                   </div>
                   <p
-                    className={`${forumFont.className} mt-2 text-[11px] tracking-[0.2em] uppercase text-[#E9DFCF]/90 text-center`}
-                  >
-                    {t.name}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Row B (identical copy) */}
-            <div className="flex items-center gap-4 w-1/2">
-              {tiles.map((t, i) => (
-                <div
-                  key={`B-${i}`}
-                  className="flex flex-col items-center shrink-0"
-                >
-                  <div className="relative min-w-[38vw] max-w-[140px] w-[38vw] aspect-[4/3] overflow-hidden rounded">
-                    <Image
-                      src={t.src}
-                      alt={t.name}
-                      className="h-full w-full object-cover"
-                      priority={false}
-                    />
-                  </div>
-                  <p
-                    className={`${forumFont.className} mt-2 text-[11px] tracking-[0.2em] uppercase text-[#E9DFCF]/90 text-center`}
+                    className={`${forumFont.className} mt-6 text-sm tracking-[0.2em] uppercase text-[#E9DFCF]/90 text-center`}
                   >
                     {t.name}
                   </p>
@@ -88,28 +63,23 @@ export function MenuMobile() {
               ))}
             </div>
           </div>
-
-          {/* Keyframes for seamless marquee */}
-          <style jsx>{`
-            @keyframes menuMarquee {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(-50%);
-              }
-            }
-          `}</style>
         </div>
       </div>
 
-      {/* Copy + CTA */}
       <div className="px-6 mt-8 pb-12">
         <p
-          className={`${notoSansFont.className} text-center text-[13px] leading-6 tracking-[0.12em] text-[#E9DFCF]`}
+          className={`${notoSansFont.className} text-center leading-6 tracking-[0.15em] text-[#E9DFCF]`}
         >
-          Discover A Handpicked Selection Of Dishes Crafted With Premium
-          Ingredients, Bold Flavors, And Refined Technique
+          <span className="block text-nowrap">
+            Discover A Handpicked Selection
+          </span>{' '}
+          <span className="block text-nowrap">
+            Of Dishes Crafted With Premium
+          </span>
+          <span className="text-nowrao block">
+            Ingredients, Bold Flavors, And
+          </span>{' '}
+          Refined Technique
         </p>
 
         <div className="mt-5 flex justify-center">
