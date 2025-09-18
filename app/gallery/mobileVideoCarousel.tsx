@@ -113,7 +113,7 @@ function VideoCard({ item }: { item: VideoItem }) {
         <p
           className={`mt-1 text-[12px] text-[#574C3E]/90 ${notoSansFont.className}`}
         >
-          By {item.author}
+          {item.author}
         </p>
       </div>
     </div>
