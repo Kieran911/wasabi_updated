@@ -21,7 +21,7 @@ export function MenuMobile() {
   ];
 
   return (
-    <section className="md:hidden w-full bg-black text-[#E9DFCF] -mt-1 -mb-12 aspect-[9/16]">
+    <section className="md:hidden w-full bg-black text-[#E9DFCF] -my-1 aspect-[9/16]">
       <div className="px-5 pt-12">
         <h1
           className={`${forumFont.className} text-center uppercase tracking-[0.22em] leading-tight`}
