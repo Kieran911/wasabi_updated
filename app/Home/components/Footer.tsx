@@ -42,11 +42,11 @@ const Footer = () => {
       {/* === MOBILE (Figma) === */}
       <div className="md:hidden w-full pt-10 pb-8">
         {/* logo */}
-        <div className="flex items-center justify-center mb-6">
+        <div className="flex items-center justify-center mb-6 size-38 mx-auto">
           <Image
             src={footerLogo}
             alt="Wasabi"
-            className="w-24 h-auto opacity-90"
+            className="w-full h-full object-cover"
             priority
           />
         </div>
