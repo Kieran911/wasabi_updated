@@ -8,7 +8,7 @@ import OurExperince from './Home/components/OurExperince';
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full">
       {/* <div className="h-[100vh]"></div> */}
       <Header />
       <div className="bg-black h-[2rem]"></div>
