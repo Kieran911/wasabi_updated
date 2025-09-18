@@ -22,7 +22,7 @@ export default function MobileLocationCard({
 }: Props) {
   return (
     <section
-      className={`relative w-full h-[92vh] overflow-hidden ${className} md:rounded-2xl`}
+      className={`relative w-full h-[92vh] md:hidden overflow-hidden ${className} md:rounded-2xl`}
       aria-label="Location"
     >
       {/* Background image */}

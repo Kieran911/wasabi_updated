@@ -12,18 +12,8 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from 'framer-motion';
-import Image, { StaticImageData } from 'next/image';
-import { notoSansFont } from '@/app/utils/font';
-import VideoGallery, { galleryImagesMobile } from './mobileVideoCarousel';
-
-type VideoItem = {
-  id?: string | number;
-  title: string;
-  author: string; // e.g. "kelvin adams"
-  thumbnail: StaticImageData | string;
-  href?: string; // optional link to video
-  onClick?: () => void; // optional handler instead of href
-};
+import Image from 'next/image';
+import { notoSansFont } from '../utils/font';
 
 const ImageCarousel = ({ show }: any) => {
   // Step 1: Build your array
@@ -54,7 +44,6 @@ const ImageCarousel = ({ show }: any) => {
       author: 'by kelvin adams',
     },
   ];
-
   const [firstImageFullyScaled, setFirstImageFullyScaled] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -124,7 +113,7 @@ const ImageCarousel = ({ show }: any) => {
     <>
       <div
         ref={containerRef}
-        className="relative hidden lg:block w-full"
+        className="relative w-full"
         style={{ height: `${galleryImages.length * 60}vh` }}
       >
         {!show && <div className="h-[20vh]"></div>}
@@ -215,7 +204,6 @@ const ImageCarousel = ({ show }: any) => {
           </AnimatePresence>
         </div>
       </div>
-      <VideoGallery items={galleryImagesMobile} className="lg:hidden" />
     </>
   );
 };
