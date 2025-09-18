@@ -31,37 +31,37 @@ export const galleryImagesMobile: VideoItem[] = [
   {
     thumbnail: firstImage,
     title: 'STACYS WEDDING PROPOSAL',
-    author: 'by kelvin adams',
+    author: 'By kelvin adams',
     href: '#',
   },
   {
     thumbnail: secondImage,
     title: 'STACYS WEDDING PROPOSAL',
-    author: 'by kelvin adams',
+    author: 'By kelvin adams',
     href: '#',
   },
   {
     thumbnail: thirdImage,
     title: 'STACYS WEDDING PROPOSAL',
-    author: 'by kelvin adams',
+    author: 'By kelvin adams',
     href: '#',
   },
   {
     thumbnail: fourthImage,
     title: 'STACYS WEDDING PROPOSAL',
-    author: 'by kelvin adams',
+    author: 'By kelvin adams',
     href: '#',
   },
   {
     thumbnail: fifthImage,
     title: 'STACYS WEDDING PROPOSAL',
-    author: 'by kelvin adams',
+    author: 'By kelvin adams',
     href: '#',
   },
   {
     thumbnail: sixthImage,
     title: 'STACYS WEDDING PROPOSAL',
-    author: 'by kelvin adams',
+    author: 'By kelvin adams',
     href: '#',
   },
 ];
