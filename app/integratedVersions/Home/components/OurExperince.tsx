@@ -21,8 +21,9 @@ import {
   notoSansFont,
   Optima_bold,
   Optima_regular,
-} from '../../utils/font';
+} from '@/app/utils/font';
 import Link from 'next/link';
+import MobileLocationCard from './MobileLocationCard';
 
 const OurExperince = () => {
   const arr = [
@@ -112,6 +113,7 @@ const OurExperince = () => {
 
   return (
     <>
+      <MobileLocationCard bgImage={mainImg} />
       <motion.div
         ref={containerRef}
         initial={{ scale: 1.4, opacity: 0, y: '-4rem' }}
@@ -188,7 +190,7 @@ const OurExperince = () => {
                 LOCATION
               </p>
               <div
-                className={`  bg-[black]/40 rounded-[30px]  backdrop-blur-md z-[100]`}
+                className={`bg-[black]/40 rounded-[30px]  backdrop-blur-md z-[100]`}
               >
                 <div className="relative  z-10 flex pb-[1rem] pt-[1rem] flex-col gap-2">
                   {/* Title */}

@@ -337,8 +337,8 @@ export const Timeline = () => {
                   className="absolute border-0 h-px bg-gray-800"
                   style={{
                     top: LINE_Y,
-                    left: baselineLeft + 30,
-                    width: baselineWidth + 50,
+                    left: baselineLeft + 15,
+                    width: baselineWidth + 65,
                     zIndex: 1,
                     pointerEvents: 'none',
                   }}

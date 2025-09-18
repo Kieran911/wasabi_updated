@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { forumFont, notoSansFont } from '../../utils/font';
+import { forumFont, notoSansFont } from '@/app/utils/font';
 import mainImg from '@/public/home/ourstory/ourstory.webp';
 import abouutButton from '@/public/home/ourstory/abouutButton.webp';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -121,8 +121,8 @@ const OurStory = () => {
                 alt="about button"
                 className="w-full h-full object-cover"
               />
-            </div>{' '}
-            ABOUT WASABI{' '}
+            </div>
+            ABOUT WASABI
           </button>
         </div>
       </div>
