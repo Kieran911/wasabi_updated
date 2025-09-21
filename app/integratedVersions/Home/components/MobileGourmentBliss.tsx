@@ -20,7 +20,7 @@ export default function MobileGourmetBliss({
   title = 'EXPERIENCE\nGOURMET BLISS',
   subcopy = 'Savor Elegance, Flavor, And\nAmbiance Like Never Before.',
   schedule = 'Now Open: Tuesday – Sunday\n | 5 PM – 11 PM',
-  ctaHref = '/reservation',
+  ctaHref = '/reserve',
   ctaLabel = 'RESERVE A TABLE',
   className = '',
 }: Props) {

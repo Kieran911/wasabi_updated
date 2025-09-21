@@ -25,6 +25,7 @@ import { useScrollDirection } from '@/app/utils/ScrollDirection';
 import { usePathname } from 'next/navigation';
 import MobileHeader from './MobileHeader';
 import MobileGourmetBliss from './MobileGourmentBliss';
+import { MenuIcon } from 'lucide-react';
 
 const Header = () => {
   const arr = [
@@ -179,7 +180,34 @@ const Header = () => {
           </Link>
         </motion.div>
       </motion.nav>
+      {/* Mobile nav */}
+      <nav
+        className="md:hidden fixed top-[8%] left-1/2 -translate-x-1/2 z-50 w-[92%]"
+        aria-label="Mobile navigation"
+      >
+        <div className="flex items-center justify-between rounded-full px-4 py-2 bg-black/30 backdrop-blur-lg">
+          {/* logo */}
 
+          {/* round menu button */}
+          <button
+            type="button"
+            aria-label="Open menu"
+            className="relative inline-flex items-center justify-center rounded-full  backdrop-blur-xs"
+          >
+            <span className="sr-only">Open menu</span>
+            <span className="flex items-center justify-center rounded-full border-[1.5px] border-[#C0A078] size-11 bg-[#EFE0CD] hover:bg-[#f5efde] transition">
+              <i className="bi bi-list text-xl text-[#c0a078]" />
+            </span>
+          </button>
+          <Image
+            src={logo}
+            alt="Wasabi"
+            className="h-12 w-auto select-none"
+            priority
+            draggable={false}
+          />
+        </div>
+      </nav>
       {/* Mobile hero */}
       <MobileHeader />
       <MobileGourmetBliss />
@@ -302,7 +330,7 @@ const Header = () => {
                 style={{ transition: '0.4s ease' }}
                 className={`${notoSansFont.className} px-[2.4rem] tracking-widest cursor-pointer hover:bg-white hover:text-black py-[0.7rem] border border-white rounded-full w-fit`}
               >
-                RESERVE A TABLE
+                <Link href="/reserve">RESERVE A TABLE</Link>
               </button>
             </div>
 

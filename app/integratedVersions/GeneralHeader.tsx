@@ -10,7 +10,7 @@ import leftCenter from '@/public/home/leftCenter.webp';
 import lefttop from '@/public/home/lefttop.webp';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid'; // For unique keys, install with: npm i uuid
+import { v4 as uuidv4 } from 'uuid';
 
 import {
   motion,
@@ -108,23 +108,11 @@ const GeneralHeader = ({ canShow }: any) => {
           <button
             type="button"
             aria-label="Open menu"
-            className="relative inline-flex items-center justify-center size-12 rounded-full  backdrop-blur-xs bg-black/50"
-            style={{
-              backgroundColor: '#E8D7BF', // warm beige
-              border: '1.5px solid #C0A078', // thin gold stroke
-            }}
+            className="relative inline-flex items-center justify-center rounded-full  backdrop-blur-xs"
           >
-            {/* 3 lines */}
             <span className="sr-only">Open menu</span>
-            <span
-              className="absolute left-1/2 -translate-x-1/2 rounded-full p-2"
-              aria-hidden="true"
-            >
-              <MenuIcon
-                stroke="#C0A078"
-                strokeWidth="1.5px"
-                className="backdrop-blur-xs"
-              />
+            <span className="flex items-center justify-center rounded-full border-[1.5px] border-[#C0A078] size-11 bg-[#EFE0CD] hover:bg-[#f5efde] transition">
+              <i className="bi bi-list text-xl text-[#c0a078]" />
             </span>
           </button>
         </div>

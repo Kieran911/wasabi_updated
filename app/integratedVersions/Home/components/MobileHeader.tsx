@@ -24,8 +24,7 @@ export default function MobileHeader({
 
   return (
     <div
-      className={`relative max-w-[97.5vw] mx-auto md:hidden mt-[5rem] rounded-[1.9rem] mb-[1rem] overflow-hidden bg-[#2B2218] shadow-[0_10px_30px_rgba(0,0,0,0.25)] ${className}`}
-      style={{ aspectRatio: '9/18' }} // keeps the tall card proportion
+      className={`relative max-w-[97.5vw] mx-auto md:hidden mt-[0.5rem] rounded-[1.9rem] mb-[1rem] h-[90vh] overflow-hidden bg-[#2B2218] shadow-[0_10px_30px_rgba(0,0,0,0.25)] ${className}`} // keeps the tall card proportion
       aria-label="Redefined Indulgence"
     >
       {/* background image */}

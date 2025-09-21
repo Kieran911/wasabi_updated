@@ -7,6 +7,7 @@ import { FeastInStyle } from './components/feast-in-style';
 import { ImagesSlider } from './components/image-slider';
 import { Timeline } from './components/timeline';
 import { AboutAndBeliefMobile } from './components/about-belief-mobile-only';
+import { OurMenu } from '../../menu/ourMenu/components/ourMenu';
 
 const Page = () => {
   const [canShow, setCanShow] = useState(false);

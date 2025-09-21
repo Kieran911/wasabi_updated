@@ -9,6 +9,7 @@ import mochi from '@/public/home/menu/mochi.webp';
 import pumpkin from '@/public/home/menu/pumpkin.webp';
 import safron from '@/public/home/menu/safron.webp';
 import steak from '@/public/home/menu/steak.webp';
+import Link from 'next/link';
 
 export function MenuMobile() {
   const tiles = [
@@ -86,7 +87,7 @@ export function MenuMobile() {
           <button
             className={`${notoSansFont.className} rounded-full bg-[#C0A078] px-7 py-3 text-[#1A140D] font-semibold tracking-[0.22em] hover:brightness-95 transition`}
           >
-            SEE MENU
+            <Link href="/menu">SEE MENU</Link>
           </button>
         </div>
       </div>
