@@ -240,7 +240,7 @@ function Card({
             {item.title}
           </h3>
           <span
-            className={`${notoSansFont.className} font-semibold text-xs md:text-sm text-[#443d33]`}
+            className={`${notoSansFont.className} font-semibold text-xs hidden md:block md:text-sm text-[#443d33]`}
           >
             ${item.price.toFixed(2)}
           </span>
@@ -253,7 +253,7 @@ function Card({
         </p>
 
         <p
-          className={`${notoSansFont.className} mt-1 md:hidden text-[11px] text-black/60`}
+          className={`${notoSansFont.className} mt-1 md:hidden text-xs text-black/70`}
         >
           ${item.price.toFixed(2)}
         </p>

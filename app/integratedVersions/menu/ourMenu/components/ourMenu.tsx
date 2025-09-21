@@ -116,7 +116,7 @@ function Segmented({
             onClick={() => onChange(c)}
             className={`${
               notoSansFont.className
-            } relative rounded-xl px-3 py-1.5 md:text-xs tracking-[0.18em] transition ${
+            } relative rounded-xl px-3.5 py-1.5 text-sm md:text-xs tracking-[0.18em] transition ${
               active ? 'bg-[#E9DFCF] text-[#C0A078]' : 'text-[#E9DFCF]'
             }`}
           >
@@ -235,12 +235,12 @@ function Card({
       <div className="flex flex-col border-t-[0.5px] border-black/5 w-full  p-2 md:p-4 flex-1 max-h-[7.5rem]">
         <div className="flex items-start justify-between gap-3">
           <h3
-            className={`${notoSansFont.className} font-semibold text-nowrap text-xs md:text-sm tracking-[0.20em] uppercase text-[#1e1b16]`}
+            className={`${notoSansFont.className} font-semibold text-nowrap text-xs md:text-sm tracking-[0.12em] md:tracking-[0.17em] uppercase text-[#1e1b16]`}
           >
             {item.title}
           </h3>
           <span
-            className={`${notoSansFont.className} font-semibold text-xs md:text-sm text-[#443d33]`}
+            className={`${notoSansFont.className} font-semibold text-xs md:text-sm hidden md:block text-[#443d33]`}
           >
             ${item.price.toFixed(2)}
           </span>
@@ -253,7 +253,7 @@ function Card({
         </p>
 
         <p
-          className={`${notoSansFont.className} mt-1 md:hidden text-[11px] text-black/60`}
+          className={`${notoSansFont.className} mt-1 md:hidden text-xs text-black/70`}
         >
           ${item.price.toFixed(2)}
         </p>
@@ -316,7 +316,7 @@ export function OurMenu() {
           <Segmented
             value={active}
             onChange={setActive}
-            className="max-w-[80%] w-full"
+            className="max-w-[83%] w-full"
           />
         </div>
 
