@@ -121,7 +121,7 @@ const ImageCarousel = ({ show }: any) => {
     return unsubscribe;
   }, [activeIndex, scale]);
   return (
-    <>
+    <div className="mt-[9rem] lg:mt-0">
       <div
         ref={containerRef}
         className="relative hidden lg:block w-full"
@@ -215,11 +215,8 @@ const ImageCarousel = ({ show }: any) => {
           </AnimatePresence>
         </div>
       </div>
-      <VideoGallery
-        items={galleryImagesMobile}
-        className="lg:hidden mt-[9rem]"
-      />
-    </>
+      <VideoGallery items={galleryImagesMobile} className="lg:hidden" />
+    </div>
   );
 };
 
