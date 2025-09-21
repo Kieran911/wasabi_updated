@@ -69,7 +69,7 @@ export function MenuMobile() {
 
       <div className="px-6 mt-8 pb-12">
         <p
-          className={`${notoSansFont.className} text-center leading-6 tracking-[0.15em] text-[#E9DFCF]`}
+          className={`${notoSansFont.className} text-center leading-6 tracking-[0.12em] text-[#E9DFCF]`}
         >
           <span className="block text-nowrap">
             Discover A Handpicked Selection

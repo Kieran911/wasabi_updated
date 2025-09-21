@@ -24,9 +24,11 @@ import Link from 'next/link';
 import { useScrollDirection } from '../utils/ScrollDirection';
 import { usePathname } from 'next/navigation';
 import { MenuIcon } from 'lucide-react';
+import { MobileNavBar } from './Home/components/MobileNavBar';
 
 const GeneralHeader = ({ canShow }: any) => {
   const scrollDirection = useScrollDirection();
+  const [canShowMobileNav, setCanShowMobileNav] = useState(false);
 
   const navLinks = [
     { label: 'Gallery', href: '/gallery' },
@@ -91,23 +93,26 @@ const GeneralHeader = ({ canShow }: any) => {
 
       {/* Mobile Header */}
       <nav
-        className="md:hidden fixed top-[8%] left-1/2 -translate-x-1/2 z-50 w-[92%]"
+        className="md:hidden fixed top-[5%] left-1/2 -translate-x-1/2 z-50 w-[92%]"
         aria-label="Mobile navigation"
       >
         <div className="flex items-center justify-between rounded-full px-4 py-2 bg-black/30 backdrop-blur-lg">
           {/* logo */}
-          <Image
-            src={logo}
-            alt="Wasabi"
-            className="h-12 w-auto select-none"
-            priority
-            draggable={false}
-          />
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Wasabi"
+              className="h-12 w-auto select-none"
+              priority
+              draggable={false}
+            />
+          </Link>
 
           {/* round menu button */}
           <button
             type="button"
             aria-label="Open menu"
+            onClick={() => setCanShowMobileNav(true)}
             className="relative inline-flex items-center justify-center rounded-full  backdrop-blur-xs"
           >
             <span className="sr-only">Open menu</span>
@@ -117,6 +122,13 @@ const GeneralHeader = ({ canShow }: any) => {
           </button>
         </div>
       </nav>
+      {canShowMobileNav && (
+        <MobileNavBar
+          onClose={() => setCanShowMobileNav(false)}
+          items={navLinks}
+          onStartAnime={canShowMobileNav}
+        />
+      )}
     </>
   );
 };

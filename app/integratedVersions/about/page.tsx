@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import GeneralHeader from '@/app/Components/GeneralHeader';
+import GeneralHeader from '../GeneralHeader';
 import Footer from '@/app/Home/components/Footer';
 import { AboutAndBelief } from './components/about-belief';
 import { FeastInStyle } from './components/feast-in-style';

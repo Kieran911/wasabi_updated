@@ -26,6 +26,7 @@ import { usePathname } from 'next/navigation';
 import MobileHeader from './MobileHeader';
 import MobileGourmetBliss from './MobileGourmentBliss';
 import { MenuIcon } from 'lucide-react';
+import { MobileNavBar } from './MobileNavBar';
 
 const Header = () => {
   const arr = [
@@ -97,6 +98,7 @@ const Header = () => {
   const canShowNavbar = useTransform(scrollYProgress, (v) => v > 0.5);
 
   const [canShow, setCanShow] = useState(false);
+  const [canShowMobileNav, setCanShowMobileNav] = useState(false);
 
   // Listen to the motion value
   useMotionValueEvent(scrollYProgress, 'change', (v) => {
@@ -147,7 +149,7 @@ const Header = () => {
             </motion.div>
           </motion.div>
           {/* Left: Menu and Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 pointer-events-none">
             {/* Hamburger */}
             <button className="flex ml-2 items-center justify-center rounded-full border border-[#C0A078] w-10 h-10 bg-[#EFE0CD] hover:bg-[#f5efde] transition">
               <i className="bi bi-list text-xl text-[#c0a078]" />
@@ -182,17 +184,16 @@ const Header = () => {
       </motion.nav>
       {/* Mobile nav */}
       <nav
-        className="md:hidden fixed top-[8%] left-1/2 -translate-x-1/2 z-50 w-[92%]"
+        className="md:hidden fixed top-[7%] left-1/2 -translate-x-1/2 z-50 w-[92%]"
         aria-label="Mobile navigation"
       >
         <div className="flex items-center justify-between rounded-full px-4 py-2 bg-black/30 backdrop-blur-lg">
-          {/* logo */}
-
           {/* round menu button */}
           <button
             type="button"
             aria-label="Open menu"
-            className="relative inline-flex items-center justify-center rounded-full  backdrop-blur-xs"
+            onClick={() => setCanShowMobileNav(true)}
+            className="relative inline-flex items-center justify-center rounded-full  backdrop-blur-xs cursor-pointer"
           >
             <span className="sr-only">Open menu</span>
             <span className="flex items-center justify-center rounded-full border-[1.5px] border-[#C0A078] size-11 bg-[#EFE0CD] hover:bg-[#f5efde] transition">
@@ -208,6 +209,13 @@ const Header = () => {
           />
         </div>
       </nav>
+      {canShowMobileNav && (
+        <MobileNavBar
+          onClose={() => setCanShowMobileNav(false)}
+          items={navLinks}
+          onStartAnime={canShowMobileNav}
+        />
+      )}
       {/* Mobile hero */}
       <MobileHeader />
       <MobileGourmetBliss />

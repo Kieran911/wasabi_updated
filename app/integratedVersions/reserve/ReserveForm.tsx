@@ -210,7 +210,7 @@ export default function ReserveForm() {
       initial="hidden"
       animate="show"
       variants={container}
-      className="w-full mt-[7rem] flex items-center justify-center px-4"
+      className="w-full mt-[7.5rem] flex items-center justify-center px-4"
     >
       {/* stack on mobile; two columns on md+ */}
       <motion.div className="w-full max-w-[940px] md:max-w-[90%] md:w-[150rem] flex flex-col md:flex-row items-stretch gap-6">

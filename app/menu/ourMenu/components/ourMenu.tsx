@@ -235,7 +235,7 @@ function Card({
       <div className="flex flex-col border-t-[0.5px] border-black/5 w-full  p-2 md:p-4 flex-1 max-h-[7.5rem]">
         <div className="flex items-start justify-between gap-3">
           <h3
-            className={`${notoSansFont.className} font-semibold text-nowrap text-xs md:text-sm tracking-[0.20em] uppercase text-[#1e1b16]`}
+            className={`${notoSansFont.className} font-semibold lg:text-nowrap text-xs md:text-sm tracking-[0.20em] uppercase text-[#1e1b16]`}
           >
             {item.title}
           </h3>

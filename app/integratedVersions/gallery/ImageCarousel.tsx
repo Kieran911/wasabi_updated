@@ -215,7 +215,10 @@ const ImageCarousel = ({ show }: any) => {
           </AnimatePresence>
         </div>
       </div>
-      <VideoGallery items={galleryImagesMobile} className="lg:hidden" />
+      <VideoGallery
+        items={galleryImagesMobile}
+        className="lg:hidden mt-[9rem]"
+      />
     </>
   );
 };

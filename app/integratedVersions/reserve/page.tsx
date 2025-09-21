@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import GeneralHeader from '@/app/Components/GeneralHeader';
+import GeneralHeader from '../GeneralHeader';
 import Footer from '../Home/components/Footer';
 import ImageCarousel from '../gallery/ImageCarousel';
 import ReserveForm from './ReserveForm';

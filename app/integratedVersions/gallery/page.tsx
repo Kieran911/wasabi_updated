@@ -1,4 +1,4 @@
-import GeneralHeader from '@/app/Components/GeneralHeader';
+import GeneralHeader from '../GeneralHeader';
 import Footer from '@/app/Home/components/Footer';
 import ImageCarousel from './ImageCarousel';
 

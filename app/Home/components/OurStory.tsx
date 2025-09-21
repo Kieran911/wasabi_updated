@@ -6,6 +6,7 @@ import mainImg from '@/public/home/ourstory/ourstory.webp';
 import abouutButton from '@/public/home/ourstory/abouutButton.webp';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 const OurStory = () => {
   const ref = useRef(null);
@@ -78,7 +79,7 @@ const OurStory = () => {
               className="w-full h-full object-cover"
             />
           </span>
-          ABOUT WASABI
+          <Link href="/about">ABOUT WASABI</Link>
         </button>
       </div>
 
@@ -122,7 +123,7 @@ const OurStory = () => {
                 className="w-full h-full object-cover"
               />
             </div>{' '}
-            ABOUT WASABI{' '}
+            <Link href="/about">ABOUT WASABI</Link>{' '}
           </button>
         </div>
       </div>

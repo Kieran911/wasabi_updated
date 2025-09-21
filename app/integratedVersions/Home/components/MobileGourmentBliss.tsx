@@ -40,7 +40,7 @@ export default function MobileGourmetBliss({
           className="object-cover object-center"
         />{' '}
       </div>
-      <div className="absolute inset-x-0 top-8 px-6 pt-13 pb-8 flex flex-col items-center text-center gap-4">
+      <div className="absolute inset-x-0 top-8 px-6 pt-12 pb-9 flex flex-col items-center text-center gap-4">
         <h2
           className={`${forumFont.className} text-white uppercase tracking-[0.32em] leading-tight`}
           style={{ fontSize: 'clamp(8.1vw, 7vw, 3rem)' }}
@@ -57,7 +57,7 @@ export default function MobileGourmetBliss({
 
         <Link
           href={ctaHref}
-          className={`${notoSansFont.className} mt-2 inline-flex items-center justify-center rounded-full border border-white/80 text-white px-5 py-4 text-xs tracking-[0.22em] hover:bg-white hover:text-black transition-colors`}
+          className={`${notoSansFont.className} mt-1 inline-flex items-center justify-center rounded-full border border-white/80 text-white px-5 py-3.5 text-xs tracking-[0.22em] hover:bg-white hover:text-black transition-colors`}
         >
           {ctaLabel}
         </Link>
