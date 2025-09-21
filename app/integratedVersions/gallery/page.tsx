@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <>
       <GeneralHeader />
-      <ImageCarousel />
+      <ImageCarousel margin={true} />
       <Footer />
     </>
   );

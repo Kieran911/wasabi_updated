@@ -16,16 +16,7 @@ import Image, { StaticImageData } from 'next/image';
 import { notoSansFont } from '@/app/utils/font';
 import VideoGallery, { galleryImagesMobile } from './mobileVideoCarousel';
 
-type VideoItem = {
-  id?: string | number;
-  title: string;
-  author: string; // e.g. "kelvin adams"
-  thumbnail: StaticImageData | string;
-  href?: string; // optional link to video
-  onClick?: () => void; // optional handler instead of href
-};
-
-const ImageCarousel = ({ show }: any) => {
+const ImageCarousel = ({ show, margin }: any) => {
   // Step 1: Build your array
   const galleryImages = [
     {
@@ -121,7 +112,7 @@ const ImageCarousel = ({ show }: any) => {
     return unsubscribe;
   }, [activeIndex, scale]);
   return (
-    <div className="mt-[9rem] lg:mt-0">
+    <>
       <div
         ref={containerRef}
         className="relative hidden lg:block w-full"
@@ -215,8 +206,11 @@ const ImageCarousel = ({ show }: any) => {
           </AnimatePresence>
         </div>
       </div>
-      <VideoGallery items={galleryImagesMobile} className="lg:hidden" />
-    </div>
+      <VideoGallery
+        items={galleryImagesMobile}
+        className={`lg:hidden ${margin ? 'mt-[9rem]' : ' '}`}
+      />
+    </>
   );
 };
 
